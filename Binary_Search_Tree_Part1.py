@@ -65,7 +65,7 @@ def build_tree(elements):
     return root
 
 if __name__ == '__main__':
-    letter_name = ["K","E","N","T", "C","A","B","A","N","A","G"]
+    letter_name = ["K","E","N","T", "A","N","G","E","L","O", "C","A","B","A","N","A","G"]
     name_tree = build_tree(letter_name)
 
     print("Alphabetical order:",name_tree.in_order_traversal())

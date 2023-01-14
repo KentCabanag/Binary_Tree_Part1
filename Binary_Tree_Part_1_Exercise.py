@@ -112,7 +112,7 @@ if __name__ == '__main__':
 
     print()
 
-    letter_name = ["K","E","N","T"]
+    letter_name = ["K","E","N","T", "A","N","G","E","L","O", "C","A","B","A","N","A","G"]
     name_tree = build_tree(letter_name)
     
     print("In order traversal:",name_tree.in_order_traversal())
