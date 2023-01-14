@@ -69,6 +69,26 @@ class BinarySearchTreeNode:
         right_sum = self.right.calculate_sum() if self.right else 0
         return self.data + left_sum + right_sum
 
+    def post_order_traversal(self):
+        elements = []
+        if self.left:
+            elements += self.left.post_order_traversal()
+        if self.right:
+            elements += self.right.post_order_traversal()
+
+        elements.append(self.data)
+
+        return elements
+
+    def pre_order_traversal(self):
+        elements = [self.data]
+        if self.left:
+            elements += self.left.pre_order_traversal()
+        if self.right:
+            elements += self.right.pre_order_traversal()
+
+        return elements
+
 
 def build_tree(elements):
     print("Building tree with these elements:",elements)
@@ -87,3 +107,14 @@ if __name__ == '__main__':
     print("Minimum of element:",numbers_tree.find_min())
     print("Maximum of element:",numbers_tree.find_max())
     print("Sum of all elements:", numbers_tree.calculate_sum())
+    print("Post order traversal:", numbers_tree.post_order_traversal())
+    print("Pre order traversal:", numbers_tree.pre_order_traversal())
+
+    print()
+
+    letter_name = ["K","E","N","T"]
+    name_tree = build_tree(letter_name)
+    
+    print("In order traversal:",name_tree.in_order_traversal())
+    print("Pre order traversal:", name_tree.pre_order_traversal())
+    print("Post order traversal:", name_tree.post_order_traversal())
