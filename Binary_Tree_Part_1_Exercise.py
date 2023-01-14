@@ -54,6 +54,21 @@ class BinarySearchTreeNode:
             else:
                 return False
 
+    def find_max(self):
+        if self.right is None:
+            return self.data
+        return self.right.find_max()
+
+    def find_min(self):
+        if self.left is None:
+            return self.data
+        return self.left.find_min()
+
+    def calculate_sum(self):
+        left_sum = self.left.calculate_sum() if self.left else 0
+        right_sum = self.right.calculate_sum() if self.right else 0
+        return self.data + left_sum + right_sum
+
 
 def build_tree(elements):
     print("Building tree with these elements:",elements)
@@ -65,4 +80,10 @@ def build_tree(elements):
     return root
 
 if __name__ == '__main__':
-    numbers = []
+    numbers = [17, 4, 1, 20, 9, 23, 18, 34]
+
+    numbers_tree = build_tree(numbers)
+    print("Input numbers:",numbers)
+    print("Minimum of element:",numbers_tree.find_min())
+    print("Maximum of element:",numbers_tree.find_max())
+    print("Sum of all elements:", numbers_tree.calculate_sum())
