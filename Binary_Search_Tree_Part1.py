@@ -37,3 +37,19 @@ class BinarySearchTreeNode:
             elements += self.right.in_order_traversal()
 
         return elements
+
+
+def build_tree(elements):
+    print("Building tree with these elements:",elements)
+    root = BinarySearchTreeNode(elements[0])
+
+    for i in range(1,len(elements)):
+        root.add_child(elements[i])
+
+    return root
+
+if __name__ == '__main__':
+    letter_name = ["K","E","N","T"]
+    name_tree = build_tree(letter_name)
+
+    print(name_tree.in_order_traversal())
