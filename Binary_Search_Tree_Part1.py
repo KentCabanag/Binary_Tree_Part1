@@ -68,6 +68,9 @@ if __name__ == '__main__':
     letter_name = ["K","E","N","T", "C","A","B","A","N","A","G"]
     name_tree = build_tree(letter_name)
 
-    print("In order traversal gives this sorted list:",name_tree.in_order_traversal())
+    print("Alphabetical order:",name_tree.in_order_traversal())
     print("Does Letter N is in the list?",name_tree.search("N"))
     print("Does letter Z is in the list?",name_tree.search("Z"))
+    print()
+    numbers_tree = build_tree([1, 5, 4, 5, 7, 9, 2])
+    print("In order traversal gives this sorted list:",numbers_tree.in_order_traversal())
